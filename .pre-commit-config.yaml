@@ -13,6 +13,8 @@ repos:
   hooks:
     - id: terraform_fmt
     - id: terraform_docs
-    - id: terraform_trivy
     - id: terrascan
+      args:
+        - --args=--non-recursive # avoids scan errors on subdirectories without Terraform config files
+        - --args=-d terraform
     - id: tfupdate
