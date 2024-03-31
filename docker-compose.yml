@@ -10,7 +10,8 @@ services:
       dockerfile: docker/Dockerfile
     environment:
       USER_CODE_PATH: /home/src/${PROJECT_NAME}
-      GCP_BUCKET_NAME: ${GOOGLE_BUCKET_NAME}
+      GOOGLE_PROJECT: ${GOOGLE_PROJECT_ID}
+      GCP_BUCKET_NAME: ${GOOGLE_PROJECT_ID}-meteorite-landings
     ports:
       - 6789:6789
     volumes:
