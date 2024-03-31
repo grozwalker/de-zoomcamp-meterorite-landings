@@ -12,6 +12,8 @@ In this project, I am going to implement some data engineering best practices an
 * distribution meteorites by types
 * interactive map of meteorite landings
 
+I am using a partition table for the main table that is used in the Looker report.
+
 
 Go to https://lookerstudio.google.com/reporting/6c8488a2-2e39-4b79-a966-de9cba50b83c/page/lo3tD to view report
 
