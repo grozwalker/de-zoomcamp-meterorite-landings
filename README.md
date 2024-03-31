@@ -68,7 +68,6 @@ terraform apply
 ## Start project localy
 
 ```bash
-cd mage-ai
 cp dev.env .env
 docker compose up
 ```

@@ -18,6 +18,7 @@ def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
     Docs: https://docs.mage.ai/design/data-loading#googlecloudstorage
     """
     config_path = path.join(get_repo_path(), 'io_config.yaml')
+    print(get_repo_path())
     config_profile = 'default'
 
     bucket_name = os.environ.get('GCP_BUCKET_NAME')

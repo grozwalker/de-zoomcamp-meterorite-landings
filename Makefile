@@ -17,3 +17,9 @@ install-pre-commit-mac: install-pre-commit-deps-mac
 
 install-pre-commit-linux: install-pre-commit-deps-linux
 	pre-commit install
+
+build:
+	docker compose build
+
+ingest_data:
+	docker run -it mage_ingester mage run mage meteorite_landings
