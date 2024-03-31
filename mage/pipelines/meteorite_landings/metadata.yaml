@@ -36,7 +36,7 @@ blocks:
   color: null
   configuration: {}
   downstream_blocks:
-  - dbt_norm_meteorite_landings
+  - dbt_normalize_meteorite_landings
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -53,27 +53,27 @@ blocks:
   color: null
   configuration:
     dbt:
-      command: run
-    dbt_profile_target: ''
+      command: build
+    dbt_profile_target: prod
     dbt_project_name: dbt/meteorite-landings
     disable_query_preprocessing: false
     export_write_policy: append
     file_source:
-      path: dbts/dbt_norm_meteorite_landings.yaml
+      path: dbts/dbt_normalize_meteorite_landings.yaml
     use_raw_sql: false
   downstream_blocks: []
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: yaml
-  name: dbt_norm_meteorite_landings
+  name: dbt_normalize_meteorite_landings
   retry_config: null
   status: executed
   timeout: null
   type: dbt
   upstream_blocks:
   - export_meterorite_landings_to_bq
-  uuid: dbt_norm_meteorite_landings
+  uuid: dbt_normalize_meteorite_landings
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
