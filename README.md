@@ -78,4 +78,4 @@ make build
 make ingest_data
 ```
 
-If you want access to mage ui run: `make ui` and open `http://localhost:6789/pipelines/meteorite_landings`
+If you want access to mage ui run: `make ui` and open http://localhost:6789/pipelines/meteorite_landings
