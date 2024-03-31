@@ -1,0 +1,3 @@
+[submodule "mage/dbt/meteorite-landings"]
+	path = mage/dbt/meteorite-landings
+	url = git@gitlab.com:dbt1614312/meteorite-landings.git
