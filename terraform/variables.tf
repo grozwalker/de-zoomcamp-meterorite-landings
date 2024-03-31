@@ -1,3 +1,9 @@
+variable "credential_file" {
+  type        = string
+  description = "Path to Service account credential file"
+  default     = "../key/gcp-service-account.json"
+}
+
 variable "project_id" {
   type        = string
   description = "Google Project ID"
@@ -15,16 +21,22 @@ variable "zone" {
   default     = "europe-west3-a"
 }
 
-variable "dataset_id" {
-  type        = string
-  description = "Dataset ID"
-  default     = "raw_data"
+variable "dataset_raw_data" {
+  type        = map(string)
+  description = "Info about dataset raw_data"
+  default = {
+    "id"          = "raw_data"
+    "description" = "Dataset for meteorite raw data"
+  }
 }
 
-variable "dataset_description" {
-  type        = string
-  description = "Dataset description"
-  default     = "Dataset for raw data"
+variable "dataset_raw_data_data_marts" {
+  type        = map(string)
+  description = "Info about dataset raw_data_data_marts"
+  default = {
+    "id"          = "raw_data_data_marts"
+    "description" = "Dataset for meteorite raw data data marts"
+  }
 }
 
 variable "resource_location" {

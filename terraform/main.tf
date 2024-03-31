@@ -1,6 +1,12 @@
 resource "google_bigquery_dataset" "raw_data" {
-  dataset_id  = var.dataset_id
-  description = var.dataset_description
+  dataset_id  = var.dataset_raw_data.id
+  description = var.dataset_raw_data.description
+  location    = var.resource_location
+}
+
+resource "google_bigquery_dataset" "raw_data_data_marts" {
+  dataset_id  = var.dataset_raw_data_data_marts.id
+  description = var.dataset_raw_data_data_marts.description
   location    = var.resource_location
 }
 
