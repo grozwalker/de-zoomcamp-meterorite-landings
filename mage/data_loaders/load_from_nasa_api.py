@@ -13,8 +13,23 @@ def load_data_from_api(*args, **kwargs):
     Template for loading data from API
     """
     url = 'https://data.nasa.gov/resource/gh4g-9sfh.csv'
+    data_chunks=[]
+    processing = True
+    offset = 0
+    limit = 1000
 
-    return pd.read_csv(url, sep=',')
+    while processing:
+        chunk = pd.read_csv(f'{url}?$offset={offset}&$limit={limit}', sep=',')
+
+        if chunk.empty:
+            processing = False
+        else:
+            data_chunks.append(chunk)
+            offset += limit
+
+    result = pd.concat(data_chunks)
+
+    return result
 
 
 @test
