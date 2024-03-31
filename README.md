@@ -71,6 +71,8 @@ terraform apply
 
 ## Start project localy
 
+In project folder run:
+
 ```bash
 cp dev.env .env
 nano .env # fill GOOGLE_PROJECT_ID
