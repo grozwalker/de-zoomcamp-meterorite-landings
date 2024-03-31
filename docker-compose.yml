@@ -1,6 +1,6 @@
 version: '3'
 services:
-  mage_ingester:
+  mage_ui:
     command: mage start ${PROJECT_NAME}
     env_file:
       - .env

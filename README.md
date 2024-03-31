@@ -12,6 +12,10 @@ In this project, I am going to implement some data engineering best practices an
 * distribution meteorites by types
 * interactive map of meteorite landings
 
+
+Go to https://lookerstudio.google.com/reporting/6c8488a2-2e39-4b79-a966-de9cba50b83c/page/lo3tD to view report
+
+
 ## Dataset
 
 In this project I get Meteorite Landings from [NASA data open portal](https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh/about_data).
@@ -69,5 +73,9 @@ terraform apply
 
 ```bash
 cp dev.env .env
-docker compose up
+nano .env # fill GOOGLE_PROJECT_ID
+make build
+make ingest_data
 ```
+
+If you want access to mage ui run: `make ui` and open `http://localhost:6789/pipelines/meteorite_landings`
