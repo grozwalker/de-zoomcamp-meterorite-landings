@@ -63,3 +63,12 @@ cp terraform.tfvars.example terraform.tfvars
 terraform init
 terraform apply
 ```
+
+
+## Start project localy
+
+```bash
+cd mage-ai
+cp dev.env .env
+docker compose up
+```
