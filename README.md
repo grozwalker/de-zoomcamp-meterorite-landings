@@ -5,15 +5,12 @@ Final project for data-engineer zoomcamp 2024
 
 For my project I decided to analyse meteorites which landings to Earth with coordonates, years and additionals params. I get data from The Meteoritical Society which contains information about all of the known meteorite landings and want to figure in which areas meteorite fragments concentrated.
 
-In this project, I am going to implement some data engineering best practices and gain interesting metrics, such as:
+In this project, I am going to implement some data engineering best practices (partition table, pre commits hooks and others) and gain interesting metrics, such as:
 
 * number of meteorites by year
 * distribution of the number of meteorites by latitude
 * distribution meteorites by types
 * interactive map of meteorite landings
-
-I am using a partition table for the main table that is used in the Looker report.
-
 
 Go to https://lookerstudio.google.com/reporting/6c8488a2-2e39-4b79-a966-de9cba50b83c/page/lo3tD to view report
 
