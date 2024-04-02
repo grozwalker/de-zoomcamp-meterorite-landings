@@ -55,6 +55,7 @@ Go to [Manage Resource](https://console.cloud.google.com/cloud-resource-manager)
 ``` bash
 cd ~
 git clone git@github.com:grozwalker/de-zoomcamp-meterorite-landings.git
+git submodule update --init --recursive
 ```
 
 ### Create a Service Account and key
