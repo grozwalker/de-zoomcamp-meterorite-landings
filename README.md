@@ -70,7 +70,7 @@ git clone git@github.com:grozwalker/de-zoomcamp-meterorite-landings.git
 ```bash
 cd ~/de-zoomcamp-meterorite-landings/terraform
 cp terraform.tfvars.example terraform.tfvars
-# fill the variable **project_id** with the value of the project ID that you created above
+nano terraform.tfvars # fill the variable **project_id** with the value of the project ID that you created above
 terraform init
 terraform apply
 ```
