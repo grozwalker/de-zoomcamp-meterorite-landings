@@ -18,10 +18,12 @@ def load_data_from_api(*args, **kwargs):
     offset = 0
     limit = 5000
 
-    print('Downloading data from NASA')
+    kwarg_logger = kwargs.get('logger')
+
+    kwarg_logger.info('Downloading data from NASA')
 
     while processing:
-        print('.'),
+        kwarg_logger.info('.')
         chunk = pd.read_csv(f'{url}?$offset={offset}&$limit={limit}', sep=',')
 
         if chunk.empty:
@@ -30,7 +32,7 @@ def load_data_from_api(*args, **kwargs):
             data_chunks.append(chunk)
             offset += limit
 
-    print('Data downloaded')
+    kwarg_logger.info('Data downloaded')
 
     result = pd.concat(data_chunks)
 
