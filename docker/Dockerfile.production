@@ -22,8 +22,10 @@ RUN rm /etc/apt/sources.list.d/bullseye.list
 
 # Note: this overwrites the requirements.txt file in your new project on first run.
 # You can delete this line for the second run :)
-COPY mage ${USER_CODE_PATH}
 COPY key/gcp-service-account.json /home/src/personal-gcp.json
 COPY files /home/src/files
+COPY mage/requirements.txt ${USER_CODE_PATH}/requirements.txt
 
 RUN pip3 install -r ${USER_CODE_PATH}/requirements.txt
+
+COPY mage ${USER_CODE_PATH}

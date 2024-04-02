@@ -11,12 +11,12 @@ blocks:
   language: python
   name: load_from_nasa_api
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_loader
   upstream_blocks: []
   uuid: load_from_nasa_api
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
@@ -33,7 +33,7 @@ blocks:
   upstream_blocks:
   - load_from_nasa_api
   uuid: export_meteorite_landings_to_gcp
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
@@ -50,7 +50,7 @@ blocks:
   upstream_blocks:
   - load_from_nasa_api
   uuid: export_meterorite_landings_to_bq
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     dbt:
@@ -75,7 +75,7 @@ blocks:
   upstream_blocks:
   - export_meterorite_landings_to_bq
   uuid: dbt_normalize_meteorite_landings
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
@@ -92,7 +92,7 @@ blocks:
   upstream_blocks:
   - export_meteorite_landings_to_gcp
   uuid: met_land_spark_from_gcp
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
@@ -109,7 +109,7 @@ blocks:
   upstream_blocks:
   - met_land_spark_from_gcp
   uuid: meteorite_landings
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks: []

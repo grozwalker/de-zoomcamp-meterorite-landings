@@ -43,6 +43,7 @@ In this project I get Meteorite Landings from [NASA data open portal](https://da
 ### Create a Google Cloud Project
 
 Go to [Manage Resource](https://console.cloud.google.com/cloud-resource-manager) page in the Google Cloud console. Click _Create Project_ and fill in the fields, after that click _Finish_.
+Then add billing account to the project
 
 ### Enable necessary api
 
@@ -87,7 +88,13 @@ cd ~/de-zoomcamp-meterorite-landings
 cp dev.env .env
 nano .env # fill GOOGLE_PROJECT_ID
 make build
-make ingest_data
+make ingest_data # It take several minutes
 ```
 
 If you want access to mage ui run: `make ui` and open http://localhost:6789/pipelines/meteorite_landings
+
+After all you can destroy all infrastructure:
+```bash
+cd ~/de-zoomcamp-meterorite-landings/terraform
+terraform destroy
+```
