@@ -3,7 +3,7 @@ Final project for data-engineer zoomcamp 2024
 
 ## About project
 
-For my project I decided to analyse meteorites which landings to Earth with coordonates, years and additionals params. I get data from The Meteoritical Society which contains information about all of the known meteorite landings and want to figure in which areas meteorite fragments concentrated.
+For my project I decided to analyse meteorites which landings to Earth with coordinates, years and other additionals params. I get data from The Meteoritical Society which contains information about all of the known meteorite landings and want to figure out in which areas meteorite fragments concentrated.
 
 In this project, I am going to implement some data engineering best practices (partition table, pre commits hooks and others) and gain interesting metrics, such as:
 

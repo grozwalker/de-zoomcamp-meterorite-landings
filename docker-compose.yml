@@ -18,6 +18,9 @@ services:
       - .:/home/src/
       - ./key/gcp-service-account.json:/home/src/personal-gcp.json
     restart: on-failure:5
+    depends_on:
+      - spark
+      - spark-worker
 
   mage_ingester_production:
     env_file:
