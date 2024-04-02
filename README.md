@@ -14,6 +14,7 @@ In this project, I am going to implement some data engineering best practices (p
 
 Go to https://lookerstudio.google.com/reporting/6c8488a2-2e39-4b79-a966-de9cba50b83c/page/lo3tD to view report
 
+_In fact, a partitioned table is not needed for such a small amount of data, but I decided to add it to show that I can do it. Also processing with spark._
 
 ## Dataset
 
