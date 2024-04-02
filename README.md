@@ -23,6 +23,7 @@ In this project I get Meteorite Landings from [NASA data open portal](https://da
 
 * [Mage](https://www.mage.ai/) for orchestrating workflow
 * [dbt](https://www.getdbt.com/) for data transformation
+* [Spark](https://spark.apache.org/) for data transformation
 * [Google BigQuery](https://cloud.google.com/bigquery) for data warehousing and analysis
 * [Google Looker Studio](https://lookerstudio.google.com) for dashboard
 * [Terraform](https://www.terraform.io/) for provisioning BigQuery dataset

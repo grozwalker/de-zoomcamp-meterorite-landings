@@ -19,10 +19,11 @@ install-pre-commit-linux: install-pre-commit-deps-linux
 	pre-commit install
 
 build:
-	docker compose build mage_ingester_production
+	docker compose build mage_ingester_production spark spark-worker
 
 ingest_data:
-	docker run -it mage_ingester mage run mage meteorite_landings
+	docker compose run --rm mage_ingester_production mage run mage meteorite_landings
+	docker compose down
 
 ui:
 	docker compose up mage_ui

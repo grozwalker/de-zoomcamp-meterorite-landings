@@ -4,13 +4,13 @@ from mage_ai.io.google_cloud_storage import GoogleCloudStorage
 from pandas import DataFrame
 from os import path
 import os
+from typing import Dict, List
 
 if 'data_exporter' not in globals():
     from mage_ai.data_preparation.decorators import data_exporter
 
-
 @data_exporter
-def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
+def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> Dict:
     """
     Template for exporting data to a Google Cloud Storage bucket.
     Specify your configuration settings in 'io_config.yaml'.
@@ -18,7 +18,6 @@ def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
     Docs: https://docs.mage.ai/design/data-loading#googlecloudstorage
     """
     config_path = path.join(get_repo_path(), 'io_config.yaml')
-    print(get_repo_path())
     config_profile = 'default'
 
     bucket_name = os.environ.get('GCP_BUCKET_NAME')
@@ -28,4 +27,11 @@ def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
         df,
         bucket_name,
         object_key,
+        index = False
+
     )
+
+    return {
+        'bucket_name': bucket_name,
+        'object_key': object_key
+    }

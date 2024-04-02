@@ -16,3 +16,10 @@ resource "google_storage_bucket" "meteorite_landings" {
 
   uniform_bucket_level_access = true
 }
+
+resource "google_storage_bucket" "meteorite_landings_tmp" {
+  name     = "${var.project_id}-${var.tmp_bucket_name}"
+  location = var.region
+
+  uniform_bucket_level_access = true
+}

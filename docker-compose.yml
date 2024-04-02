@@ -11,6 +11,7 @@ services:
       USER_CODE_PATH: /home/src/${PROJECT_NAME}
       GOOGLE_PROJECT: ${GOOGLE_PROJECT_ID}
       GCP_BUCKET_NAME: ${GOOGLE_PROJECT_ID}-meteorite-landings
+      SPARK_MASTER_HOST: spark://spark:7077
     ports:
       - 6789:6789
     volumes:
@@ -19,7 +20,6 @@ services:
     restart: on-failure:5
 
   mage_ingester_production:
-    image: mage_ingester
     env_file:
       - .env
     build:
@@ -27,3 +27,38 @@ services:
       dockerfile: docker/Dockerfile.production
       args:
         GOOGLE_PROJECT: ${GOOGLE_PROJECT_ID}
+    depends_on:
+      - spark
+      - spark-worker
+
+  spark:
+    image: docker.io/bitnami/spark:3.3
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+    ports:
+      - '8080:8080'
+      # - '8888:8888'   # this port is for jupyter notebook
+      - '4041:4040'   # this port is for spark UI, you may need to open 4041 or 4042 in case 4040 is occupied
+
+    volumes:
+      - ./key/gcp-service-account.json:/home/src/personal-gcp.json
+    #   - "./:/opt/spark:rw"
+    #   - "./code:/code:rw"
+
+  spark-worker:
+    image: docker.io/bitnami/spark:3.3
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark:7077
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_WORKER_CORES=1
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+    ports:
+      - '8081:8081'     # this port is usde to acces the worker UI

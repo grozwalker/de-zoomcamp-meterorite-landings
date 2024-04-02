@@ -7,7 +7,6 @@ repos:
     -   id: trailing-whitespace
     -   id: end-of-file-fixer
     -   id: check-yaml
-    -   id: check-added-large-files
 - repo: https://github.com/antonbabenko/pre-commit-terraform
   rev: v1.88.2 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
   hooks:
@@ -16,5 +15,5 @@ repos:
     - id: terrascan
       args:
         - --args=--non-recursive # avoids scan errors on subdirectories without Terraform config files
-        - --args=-d terraform
+        - --args=-d ../terraform
     - id: tfupdate

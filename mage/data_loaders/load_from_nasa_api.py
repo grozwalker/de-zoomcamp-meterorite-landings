@@ -16,7 +16,7 @@ def load_data_from_api(*args, **kwargs):
     data_chunks=[]
     processing = True
     offset = 0
-    limit = 10000
+    limit = 1000
 
     while processing:
         chunk = pd.read_csv(f'{url}?$offset={offset}&$limit={limit}', sep=',')

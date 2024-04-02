@@ -19,7 +19,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - met_land_spark_from_gcp
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -74,6 +75,56 @@ blocks:
   upstream_blocks:
   - export_meterorite_landings_to_bq
   uuid: dbt_normalize_meteorite_landings
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - meteorite_landings
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: met_land_spark_from_gcp
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - export_meteorite_landings_to_gcp
+  uuid: met_land_spark_from_gcp
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - met_land_spark_to_bq
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: meteorite_landings
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - met_land_spark_from_gcp
+  uuid: meteorite_landings
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: met_land_spark_to_bq
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - meteorite_landings
+  uuid: met_land_spark_to_bq
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}

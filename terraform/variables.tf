@@ -47,6 +47,12 @@ variable "resource_location" {
 
 variable "bucket_name" {
   type        = string
-  description = "GSB name"
+  description = "CSB name"
   default     = "meteorite-landings"
+}
+
+variable "tmp_bucket_name" {
+  type        = string
+  description = "CSB name fro tmp spark files"
+  default     = "meteorite-landings-tmp"
 }
