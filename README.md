@@ -47,6 +47,7 @@ Go to [Manage Resource](https://console.cloud.google.com/cloud-resource-manager)
 
 * [IAM API](https://console.cloud.google.com/flows/enableapi?apiid=iam.googleapis.com)
 * [IAM Service Account Credentials API](https://console.cloud.google.com/apis/library/iamcredentials.googleapis.com)
+* [BigQuery API](https://console.cloud.google.com/marketplace/product/google/bigquery.googleapis.com)
 
 ### Clone repo
 
