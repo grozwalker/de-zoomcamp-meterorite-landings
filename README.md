@@ -37,6 +37,7 @@ In this project I get Meteorite Landings from [NASA data open portal](https://da
 
 1. A [Google Cloud Platform](https://cloud.google.com/) account
 1. Docker (https://www.docker.com/get-started/)
+1. Terraform (https://developer.hashicorp.com/terraform/install)
 
 ### Create a Google Cloud Project
 
