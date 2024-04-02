@@ -47,6 +47,13 @@ Go to [Manage Resource](https://console.cloud.google.com/cloud-resource-manager)
 * [IAM API](https://console.cloud.google.com/flows/enableapi?apiid=iam.googleapis.com)
 * [IAM Service Account Credentials API](https://console.cloud.google.com/apis/library/iamcredentials.googleapis.com)
 
+### Clone repo
+
+``` bash
+cd ~
+git clone git@github.com:grozwalker/de-zoomcamp-meterorite-landings.git
+```
+
 ### Create a Service Account and key
 
 1. In the Google Cloud console, go to the [Create service account](https://console.cloud.google.com/projectselector/iam-admin/serviceaccounts/create) page
@@ -61,8 +68,7 @@ Go to [Manage Resource](https://console.cloud.google.com/cloud-resource-manager)
 ### Create BQ infrastructure
 
 ```bash
-git clone git@github.com:grozwalker/de-zoomcamp-meterorite-landings.git
-cd de-zoomcamp-meterorite-landings/terraform
+cd ~/de-zoomcamp-meterorite-landings/terraform
 cp terraform.tfvars.example terraform.tfvars
 # fill the variable **project_id** with the value of the project ID that you created above
 terraform init
@@ -72,9 +78,8 @@ terraform apply
 
 ## Start project localy
 
-In project folder run:
-
 ```bash
+cd ~/de-zoomcamp-meterorite-landings
 cp dev.env .env
 nano .env # fill GOOGLE_PROJECT_ID
 make build
