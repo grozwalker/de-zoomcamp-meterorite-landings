@@ -2,7 +2,6 @@ install-pre-commit-deps-mac:
 	brew install pre-commit terraform-docs tfsec checkov terrascan tfupdate
 	pre-commit install
 
-
 install-pre-commit-deps-linux:
 	sudo apt update
 	sudo apt install -y unzip software-properties-common python3 python3-pip python-is-python3
