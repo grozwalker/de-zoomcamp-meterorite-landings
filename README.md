@@ -29,6 +29,7 @@ In this project I get Meteorite Landings from [NASA data open portal](https://da
 * [Google Looker Studio](https://lookerstudio.google.com) for dashboard
 * [Terraform](https://www.terraform.io/) for provisioning BigQuery dataset
 * [Docker](https://www.docker.com/) for running services on local machine
+* [Docker Compose](https://docs.docker.com/compose/install/) for running services on local machine
 
 
 # Reproduction Step
